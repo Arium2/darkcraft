@@ -244,6 +244,16 @@ input, select, textarea { outline: none; }
 	.clear {
 		clear: both;
 	}
+	p {
+		padding: 10px 12px 0 12px;
+		line-height: 17px;
+		text-align: justify;
+		font-family: "Open Sans";
+		font-weight: normal;
+		font-size: 14px;
+		color: #C6C6C6;
+		overflow: hidden;
+	}
 
 /*================================================================================*/
 /*= III. Header =*/
@@ -912,6 +922,6 @@ footer#footer .inner h1 {
 	text-shadow: 0 0 6px #FFF, 0 3px 0 #C7C7C7;
 	color: #FFF;
 }
-footer#footer .inner h1.center {
+footer#footer .inner h1 {
 	text-align: center;
 }

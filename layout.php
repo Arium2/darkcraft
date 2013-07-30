@@ -6,12 +6,12 @@
 	<meta name="description" content="{description}" />
 	<meta name="keywords" content="{keywords}" />
 	<?php if(isset($params[0]) AND $params[0] == "login"): ?>
-	<link rel="stylesheet" href="<?= TWEB ?>assets/css/login.css" />
+	<link rel="stylesheet" href="<?= ASSETS ?>css/login.css" />
 	<?php elseif(isset($params[0]) AND $params[0] == "signup"): ?>
-	<link rel="stylesheet" href="<?= TWEB ?>assets/css/signup.css" />
+	<link rel="stylesheet" href="<?= ASSETS ?>css/signup.css" />
 	<?php else: ?>
-	<link rel="stylesheet" href="<?= TWEB ?>assets/css/style.css" />
-	<link rel="stylesheet" href="<?= TWEB ?>assets/css/bjqs.css" />
+	<link rel="stylesheet" href="<?= ASSETS ?>css/style.css" />
+	<link rel="stylesheet" href="<?= ASSETS ?>css/bjqs.css" />
 	<?php endif; ?>
 </head>
 <body>
@@ -26,7 +26,7 @@
 			<div id="signup" class="right">
 				<ul>
 					<?php if(isset($_SESSION["isLogged"]) AND $_SESSION["isLogged"]): ?>
-					<li><a href="#">{session.username}</a></li>
+					<li><a href="<?php if(!isset($_SESSION["admin"]) OR !$_SESSION["admin"]): ?>#<?php else: ?><?= TLINK ?>admin<?php endif; ?>">{session.username}</a></li>
 					<li>
 					<a href="#" onclick="if(confirm('Êtes-vous sûr de vouloir vous déconnecter ?')) window.location.replace('<?= WEBROOT ?>actions/users/logout')">Déconnexion</a></li>
 					<?php else: ?>
@@ -50,12 +50,12 @@
 			</ul>
 			<ul class='menu'>
 				<li><a href="<?= TLINK ?>">Accueil</a></li>
-				<?php foreach($pages as $k => $v): ?>
-				<li><a href="#"><?= $v["title"] ?></a></li>
-				<?php endforeach; ?>
 				<?php if($options["shop_use"]): ?>
 				<li><a href="<?= TLINK ?>shop">Boutique</a></li>
 				<?php endif; ?>
+				<?php foreach($pages as $k => $v): ?>
+				<li><a href="<?= TLINK ?>page/<?= $v["id"] ?>"><?= $v["title"] ?></a></li>
+				<?php endforeach; ?>
 			</ul>
 		</div>
 	</nav>
@@ -79,7 +79,7 @@
 		<div class="inner">
 			<section id="comments-container">
 				<header>
-					<h1 class="center">Derniers commentaires</h1>
+					<h1>Derniers commentaires</h1>
 				</header>
 				<?php foreach($lastcomments as $k => $v): ?>
 				<div class="comment">
@@ -105,7 +105,7 @@
 			</section>
 			<section id="partners">
 				<header>
-					<h1 class='center'>Partenaires</h1>
+					<h1>Partenaires</h1>
 				</header>
 				<ul>
 				</ul>
