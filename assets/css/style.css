@@ -405,11 +405,10 @@ section#content .inner section#wrap {
 		height: 190px;
 	}
 	section#content .inner section#posts-container div.post div.post-text {
-		background: url("../images/post-bg.png") no-repeat;
-		box-shadow: inset 0 0 6px #000;
-		width: 102%;
-		height: 65.5%;
-		margin-left: -9px;
+		background: url("../images/comment-bg.png") repeat;
+		box-shadow: inset 0 0 18px #000;
+		width: 100%;
+		height: 66.5%;
 		margin-top: -6px;
 	}
 	section#content .inner section#posts-container div.post div.post-content header h1 {
