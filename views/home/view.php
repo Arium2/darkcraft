@@ -3,10 +3,10 @@
 		<?php if(!empty($posts)): ?>
 		<section id="slider">
 			<div class="slider-bjqs">
-				<ul>
+				<ul class='bjqs'>
 					<?php foreach($posts as $k => $v): ?>
 					<li>
-						<img src="<?= THUMBS ?><?= $v["image"]["name"] ?>_1024x340.<?= $v["image"]["ext"] ?>"/>
+						<img src="<?= THUMBS ?><?= $v["image"]["name"] ?>_1024x400.<?= $v["image"]["ext"] ?>"/>
 						<div class='bjqs-caption'>
 							<h1><?= $v["title"] ?></h1>
 							<p class='bjqs-caption'><?= TextUtils::extract($v["extract"], 270) ?></p>
@@ -52,7 +52,7 @@ $(function() {
 });*/
 $(document).ready(function() {
     $('#slider-bjqs').bjqs({
-        'height' : 340,
+        'height' : 400,
         'width' : 1024,
         'responsive' : true,
         'animtype' : 'fade',
