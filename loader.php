@@ -2,9 +2,11 @@
 $_comments = loadBundle("fr.solicium.comments");
 $_minecraft = loadBundle("fr.solicium.minecraft");
 $_pages = loadBundle("fr.solicium.pages");
+$_widgets = loadBundle("fr.solicium.widgets");
 $pages = $_pages->getPages();
 $serverdata = $_minecraft->getServer();
 $lastcomments = $_comments->getLastComments();
+$widgets = $_widgets->getWidgets();
 
 if(!empty($serverdata)) {
 	$serverdata = array(
@@ -25,8 +27,12 @@ set(array(
 	"options" => array(
 		"jsonapi_use" => Configure::read("jsonapi_use"),
 		"shop_use" => Configure::read("shop_use"),
+		"facebook" => Configure::read("facebook_page"),
+		"youtube" => Configure::read("youtube_channel"),
+		"twitter" => Configure::read("twitter_account"),
 	),
 	"lastcomments" => $lastcomments,
 	"serverdata" => $serverdata,
 	"pages" => $pages,
+	"widgets" => $widgets,
 ));

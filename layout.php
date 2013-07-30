@@ -44,9 +44,9 @@
 	<nav id="navigation">
 		<div class="inner">
 			<ul class='social'>
-				<li><a href="#"><img src="<?= TWEB ?>assets/images/facebook.png" alt="facebook" /></a></li>
-				<li><a href="#"><img src="<?= TWEB ?>assets/images/twitter.png" alt="twitter" /></a></li>
-				<li><a href="#"><img src="<?= TWEB ?>assets/images/youtube.png" alt="youtube" /></a></li>
+				<?php if($options["facebook"]): ?><li><a href="{options.facebook}"><img src="<?= ASSETS ?>images/facebook.png" alt="facebook" /></a></li><?php endif; ?>
+				<?php if($options["twitter"]): ?><li><a href="https://twitter.com/<?= str_replace("@", "", $options["twitter"]) ?>"><img src="<?= ASSETS ?>images/twitter.png" alt="twitter" /></a></li><?php endif; ?>
+				<?php if($options["youtube"]): ?><li><a href="http://www.youtube.com/user/{options.youtube}"><img src="<?= ASSETS ?>images/youtube.png" alt="youtube" /></a></li><?php endif; ?>
 			</ul>
 			<ul class='menu'>
 				<li><a href="<?= TLINK ?>">Accueil</a></li>

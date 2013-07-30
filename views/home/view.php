@@ -29,6 +29,7 @@
 						<h1><a href="<?= TLINK ?>post/<?= $v["id"] ?>"><?= $v["title"] ?></a></h1>
 					</header>
 					<div class='post-text'>
+						<p><?= $v["extract"] ?></p>
 						<a class="more" href="<?= TLINK ?>post/<?= $v["id"] ?>"><span class="gray">[+]</span> Lire la suite</a>
 					</div>
 				</div>
