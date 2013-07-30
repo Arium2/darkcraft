@@ -23,7 +23,7 @@
 			<h1>Dernières actualités</h1>
 			<?php foreach($posts as $k => $v): ?>
 			<div class="post">
-				<img src="<?= $v["image"] ?>" />
+				<img src="<?= THUMBS ?><?= $v["image"]["name"] ?>_190x190.<?= $v["image"]["ext"] ?>" />
 				<div class="post-content"> 
 					<header>
 						<h1><a href="<?= TLINK ?>post/<?= $v["id"] ?>"><?= $v["title"] ?></a></h1>
